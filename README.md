@@ -204,7 +204,7 @@
        - 템플릿 메소드
        - 방문자
 
-- Human Interface Guide
+- [Human Interface Guide](./pattern/hig.md)
 
 #### - Maintenance
 
