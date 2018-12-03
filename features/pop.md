@@ -8,7 +8,7 @@ OOP (객체지향 프로그래밍)에 기반을 둔 대부분의 언어는 대�
 
 #### 1. 가벼움과 보안성
 
-  - Class처럼 모든 API를 가져올 필요 없이 Protocol을 통해 필요한 API만 가져올 수 있습니다.
+  - 인스턴스 생성시 프로토콜을 타입으로 사용함으로서 해당 인스턴스를 추상화하여 보안성을 높일 수 있습니다.
 
 ```swift
 protocol Eat {
@@ -32,7 +32,8 @@ human1.eat()
 
 // Protocol로 접근
 let human2: Eat = Human()
-human2.speak() //에러, 접근 불가
+//human2.speak() 에러, 접근 불가
+(human2 as! Human).speak() // 단, 구체적인 인스턴스로 캐스팅하여, 추상화에 의해 가려진 부분에 다시 접근할 수도 있습니다. 
 human2.eat()
 ```
 
