@@ -49,9 +49,7 @@ human2.eat()
 
 ```swift
 protocol GreetProtocol {
-  func greet() {
-    print("hello")
-  }
+  func greet() 
 }
 
 extension GreetProtocol {
