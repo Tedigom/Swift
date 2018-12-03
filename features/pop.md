@@ -11,27 +11,28 @@ OOP (객체지향 프로그래밍)에 기반을 둔 대부분의 언어는 대�
   - Class처럼 모든 API를 가져올 필요 없이 Protocol을 통해 필요한 API만 가져올 수 있습니다.
 
 ```swift
-protocal Eat {
-  func eat()
+protocol Eat {
+    func eat()
 }
 
 class Human: Eat {
-  func speak() {
-    print("hello")
-  }
-
-  func eat() {
-    print("yami")
-  }
+    func speak() {
+        print("hello")
+    }
+    
+    func eat() {
+        print("yami")
+    }
 }
 
 // Class로 접근
 let human1 = Human()
 human1.speak()
-human2.eat()
+human1.eat()
 
 // Protocol로 접근
-// human1.speak() 에러, 접근 불가
+let human2: Eat = Human()
+human2.speak() //에러, 접근 불가
 human2.eat()
 ```
 
