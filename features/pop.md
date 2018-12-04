@@ -48,7 +48,9 @@ human2.eat()
   - 코드 중복이 발생하는 상황 -> 상속이 없는 구조체로 만들수 있습니다. (성능적 이득)
 
   - Value Type을 통해 멀티 스레드 환경에서 Thread Safety 높일 수 있습니다.
-
+  
+  - 단, Anyobject 프로토콜을 protocol’s inheritance list에 추가할 경우, struct나 enum이 아닌 class만 프로토콜을 따르게 할 수 있습니다. 
+  
 ```swift
 protocol GreetProtocol {
   func greet() 
