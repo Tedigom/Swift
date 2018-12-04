@@ -91,35 +91,6 @@ struct SuperStar: CanShootThrees, CanBlock, CanRebound {}
   - 제너릭과 함께 쓰면 더 강력한 활용도를 갖습니다.
 
 
-## where Self
-
-보통 Extension 뒤에 'where Self: 자료형'을 통해 추가적인 조건을 지정할 수 있습니다. Protocol Extension 역시 'A를 따른다고 한 것들 중 특별히 B까지 따르는 것들은 추가로 이것들을 더 주겠다.'라는 의미를 추가할 수 있습니다.
-
-```swift
-protocol CanShootThrees {}
-protocol CanBlock {}
-protocol CanRebound {}
-
-extension CanBlock where Self: CanShootThrees {
-  func showOff() {
-    print("I can play both offense and defense")
-  }
-}
-
-struct PureShooter: CanShootThrees {}
-struct DefensiveForword: CanBlock, CanRebound {}
-struct SuperStar: CanShootThrees, CanBlock, CanRebound {}
-
-let iverson = PureShooter()
-let bowen = DefensiveForword()
-let jordan = SuperStar()
-
-iverson.showOff() // 에러
-bowen.showOff() // 에러
-jordan.showOff() // "I can play both offense and defense"
-```
-
-
 ### Reference:
 - http://blog.yagom.net/531
 - http://blog.naver.com/PostView.nhn?blogId=jdub7138&logNo=220968251035&beginTime=0&jumpingVid=&from=search&redirect=Log&widgetTypeCall=true
