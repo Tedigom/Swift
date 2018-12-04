@@ -1,6 +1,38 @@
 # Generics
 
-제네릭이란, 일반 프로그래밍 원론에서 다루는 개념을 살펴보면 데이터 형식에 의존하지 않고 **하나의 값이 여러 다른 데이터타입을 가질 수 있는 기술**에 중점을 두어 재사용성을 높일 수 있도록 하는 프로그래밍 개념입니다.
+제네릭이란, 일반 프로그래밍 원론에서 다루는 개념을 살펴보면 데이터 형식에 의존하지 않고 **하나의 값이 여러 다른 데이터타입을 가질 수 있는 기술**에 중점을 두어 재사용성을 높일 수 있도록 하는 프로그래밍 개념입니다. 제너릭의 개념이 없다면 아래와 같이 데이터 형식마다 서로 다른 함수를 짜주어야 하는 불편함이 있을 것 입니다.
+
+```swift
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let temp = a
+    a=b
+    b = temp
+}
+
+func swapTwoStrings(_ a: inout String, _ b: inout String) {
+    let temp = a
+    a=b
+    b = temp
+}
+
+func swapTwoDoubles(_ a: inout Double, _ b: inout Double) {
+    let temp = a
+    a=b
+    b = temp
+}
+```
+
+그러나 제너릭을 통해 아래와 같이 간단하게 바꿀 수 있습니다.
+
+```swift
+func swapTwoValues<T>(_ a: inout T, _ b: inout T) {
+    let temp = a
+    a=b
+    b = temp
+}
+```
+
+
 
 객체 지향 프로그래밍에서는 제네릭을 위의 기본 개념을 바탕으로 하여 클래스 내부에서 사용될 데이터 타입을 클래스 내부에서 지정하지 않고 클래스 외부에서 지정하는 기법을 이야기합니다. 다시 말해서, 클래스 코드 블록을 정의할 때 데이터 타입을 지정하는 것이 아니라 클래스의 **인스턴스를 생성할 때 데이터 타입을 지정**해준다는 것입니다.
 
